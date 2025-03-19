@@ -65,15 +65,21 @@ Run the following command to sync the UV package:
 uv sync
 ```
 
-This command ensures that the UV package is properly configured with the MCP server and database.
+This command ensures that the UV package installs the package correctly.
 
 ### 2. Run the Query Agent
-Start the query agent using the following command:
+#### Start the query agent using the following command:
 ```bash
 uv run queryagent
 ```
 
-This will execute the query agent, which interacts with the MCP server and database.
+This will prompt for the user query
+
+#### Alt - with query (Banking database)
+
+```bash
+uv run queryagent "Who holds the most funds in thier account?"
+```
 
 ---
 
