@@ -8,12 +8,14 @@ from mcp.client.stdio import stdio_client
 from sql_query_agency.util.config import Settings
 from sql_query_agency.util.fileio import file_output
 
+settings = Settings()
+
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
 model = ChatAnthropic(
-    model_name="claude-3-7-sonnet-latest",
+    model_name=settings.CLAUDE_MODEL,
     temperature=0,
     timeout=None,
     max_retries=2,
@@ -22,7 +24,7 @@ model = ChatAnthropic(
 # the server needs to pre-built with docker as mcp/postgres:latest
 server_params = StdioServerParameters(
     command="docker",
-    args=["run", "--rm", "-i", "mcp/postgres:latest", Settings().DATABASE_URL],
+    args=["run", "--rm", "-i", "mcp/postgres:latest", settings.DATABASE_URL],
 )
 
 
