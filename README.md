@@ -1,6 +1,9 @@
 # Langchain-MCP
 
-This repository demonstrates how to use a UV package to interact with an MCP server as a docker image, connected to a PostgreSQL database. Follow the steps below to set up and use this repository.
+This repository demonstrates a very simple example of how to interact with an MCP server as a docker image, connected to a PostgreSQL database.
+
+[modelcontextprotocol](https://modelcontextprotocol.io/introduction)
+>MCP is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools.
 
 ---
 
@@ -9,18 +12,24 @@ This repository demonstrates how to use a UV package to interact with an MCP ser
 Before you begin, ensure you have the following installed on your system:
 
 - [Docker](https://www.docker.com/)
-- [A PostgreSQL Database](https://www.postgresql.org/)
-- [MCP Postgresql Server](https://github.com/modelcontextprotocol/servers)
+- [PostgreSQL Database](https://www.postgresql.org/)
+- [MCP Servers](https://github.com/modelcontextprotocol/servers)
 
 ---
 
-## Setup Instructions
+## Flow and tools
+- We use a postgresql database that the Postgresl MCP Server is aware of through the config
+- `from langchain_mcp_adapters.tools import load_mcp_tools` makes creates the mcp tool 
+- `create_react_agent` is a fast agent templater
+- we output the stream to file 
+
+## Project Setup Instructions
 
 ### 1. Clone the Repository
 Clone this repository to your local machine:
 ```bash
 git clone https://github.com/your-repo/Langchain-MCP.git
-cd Langchain-MCP
+cd Langgraph-mcp-client directory
 ```
 
 ### 2. Create a `.env` File
@@ -42,6 +51,12 @@ Install the UV package globally if you haven't already:
 
 ---
 
+## MCP Server Setup
+
+1. Clone the repo [MCP Servers](https://github.com/modelcontextprotocol/servers) to a separate directory
+2. Run - `docker build -t mcp/postgres -f src/postgres/Dockerfile .` to build and tag the image
+
+
 ## Usage Instructions
 
 ### 1. Sync the UV Package
@@ -61,6 +76,10 @@ uv run queryagent
 This will execute the query agent, which interacts with the MCP server and database.
 
 ---
+
+## TODO:
+- Output formating 
+- Multi agent 
 
 ## Troubleshooting
 

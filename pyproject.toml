@@ -12,6 +12,8 @@ dependencies = [
     "pydantic-settings>=2.8.1",
 ]
 
+
+
 [project.scripts]
 queryagent = "sql_query_agency.main:main"
 
@@ -22,3 +24,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/sql_query_agency"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.0",
+]
