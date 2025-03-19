@@ -1,6 +1,6 @@
-# Langchain-MCP
+# Langgraph-MCP
 
-This repository demonstrates a very simple example of how to interact with an MCP server as a docker image, connected to a PostgreSQL database.
+This repository demonstrates a very low level example of how to interact with an MCP server as a docker image, connected to a PostgreSQL database with LangGraph agents.
 
 [modelcontextprotocol](https://modelcontextprotocol.io/introduction)
 >MCP is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools.
@@ -12,7 +12,7 @@ This repository demonstrates a very simple example of how to interact with an MC
 Before you begin, ensure you have the following installed on your system:
 
 - [Docker](https://www.docker.com/)
-- [PostgreSQL Database](https://www.postgresql.org/)
+- [PostgreSQL Database](https://www.postgresql.org/) - running and populated
 - [MCP Servers](https://github.com/modelcontextprotocol/servers)
 
 ---
