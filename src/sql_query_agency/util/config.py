@@ -13,11 +13,10 @@ class Settings(BaseSettings):
 
     CLAUDE_MODEL: str = "claude-3-7-sonnet-latest"
 
-
     @property
     def DATABASE_URL(self) -> str:
         return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
-    
+
     # postgresql://Admin:Lilly11!@localhost:5432/bankingdb
 
     class Config:
