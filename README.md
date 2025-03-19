@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Flow and tools
 - We use a postgresql database that the Postgresl MCP Server is aware of through the config
-- `from langchain_mcp_adapters.tools import load_mcp_tools` makes creates the mcp tool 
+- `from langchain_mcp_adapters.tools import load_mcp_tools` creates the mcp tool 
 - `create_react_agent` is a fast agent templater
 - we output the stream to file 
 

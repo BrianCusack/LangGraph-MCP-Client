@@ -11,13 +11,11 @@ class Settings(BaseSettings):
     DB_SSLMODE: str = Field(..., env="DB_SSLMODE")
     ANTHROPIC_API_KEY: str = Field(..., env="ANTHROPIC_API_KEY")
 
-    CLAUDE_MODEL: str = "claude-3-7-sonnet-latest"
+    CLAUDE_MODEL: str = Field(..., env="CLAUDE_MODEL")
 
     @property
     def DATABASE_URL(self) -> str:
         return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
-
-    # postgresql://Admin:Lilly11!@localhost:5432/bankingdb
 
     class Config:
         env_file = ".env"
