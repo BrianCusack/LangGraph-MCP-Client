@@ -1,4 +1,4 @@
-# Langgraph-MCP for Postgresql
+# Langgraph-MCP Client for Postgresql Example
 
 This repository demonstrates a very low level example of how to interact with an MCP server as a docker image, connected to a PostgreSQL database for LangGraph agents.
 
